@@ -1,10 +1,13 @@
 import React from 'react';
-import Dummy from './Component';
+import Codebox from './Codebox';
 
 function App() {
     return (
         <div>
-            <Dummy />
+            <Codebox code="npm run start"/>
+            <Codebox code="npm run build"/>
+            <Codebox code="npm run test"/>
+            <Codebox code="npm run eject"/>
         </div>
     );
 }
