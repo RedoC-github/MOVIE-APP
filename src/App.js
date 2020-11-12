@@ -1,21 +1,27 @@
-import React from 'react';
-import Codebox from './Codebox';
+import React from "react";
 
-const codeList = [
-    "npm run start",
-    "npm run build",
-    "npm run test",
-    "npm run eject"
-];
+class App extends React.Component {
+  state = {
+    count: 0
+  };
 
-function App() {
+  render() {
     return (
-        <div>
-            {codeList.map(codelists => (
-                <Codebox code={codelists}/>
-            ))}
-        </div>
+      <div>
+        <h1>COUNTER</h1>
+        <h1>{this.state.count}</h1>
+        <button onClick={this.add}>+</button>
+        <button onClick={this.sub}>-</button>
+      </div>
     );
+  }
+
+  add = () => {
+    this.setState(current => ({count: current.count + 1}));
+  };
+  sub = () => {
+    this.setState(current => ({count: current.count - 1}));  
+  };
 }
 
 export default App;
